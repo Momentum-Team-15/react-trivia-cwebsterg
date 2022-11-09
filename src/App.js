@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import 'bulma/css/bulma.min.css'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import './App.css';
+const URL='https://opentdb.com/api_php?amount=10&category='
 
-function App() {
+
+function App () {
+  const [triviaDB, setTriviaDB] = useState([])
+
+  useEffect(() => {
+    axios.get(URL)
+    .then(data => setCategories(response.data))
+    },[]
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Trial by Trivia</h1>
       </header>
+      <button className="category"></div>
     </div>
   );
 }
