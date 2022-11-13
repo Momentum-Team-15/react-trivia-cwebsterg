@@ -1,5 +1,4 @@
 import "./App.css";
-// import 'bulma/css/bulma.min.css';
 import { useState, useEffect } from "react";
 import { getCategories } from "./components/requests";
 import { Categories } from "./components/categories";
@@ -17,8 +16,8 @@ const App = () => {
 
   return (
     <div className="container">
-      <header className="hero is-primary">
-        <h1 className="hero-body title has-text-centered">Trial by Trivia</h1>
+      <header>
+        <h1>Trial by Trivia</h1>
       </header>
 
       <div>

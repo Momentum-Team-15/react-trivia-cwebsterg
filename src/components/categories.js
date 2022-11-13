@@ -1,4 +1,4 @@
-export const Categories = ({ category, setSelectedId }) => {
+export const Categories = ({ category, setSelectedCategoryId }) => {
 
     return(
         <section className="box">
@@ -8,7 +8,7 @@ export const Categories = ({ category, setSelectedId }) => {
         {category.map((cat, idx) => (
             <div className="block" key={idx}>
                 <button className="categories button is-info" key={idx} 
-                onClick={()=>setSelectedId(cat.id)}>{cat.name}</button>
+                onClick={()=>setSelectedCategoryId(cat.id)}>{cat.name}</button>
             </div>
     ))}
         </div>

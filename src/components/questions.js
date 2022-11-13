@@ -56,7 +56,7 @@ export const Questions = ({selectedCategoryID, setSelectedCategoryId}) => {
             ) : (
             <div><h4>Done!</h4></div>
             // <FinalScore 
-            // setSelectedId={setSelectedId}
+            // setSelectedCategoryId={setSelectedCategoryId}
             // right={right}
             // wrong={wrong}
             // quiz={quiz} />
