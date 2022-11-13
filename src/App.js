@@ -1,33 +1,23 @@
-// import 'bulma/css/bulma.min.css'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import './App.css'
-const catUrl='https://opentdb.com/api_category.php'
-let questionURL='https://opentdb.com/api.php?type=multiple&amount=10&category='
+import './App.css';
+import 'bulma/css/bulma.min.css';
+import { useState, useEffect } from 'react';
+import { getCategories } from './requests';
+import { Categories} from './components/categories';
+import { Questions } from './components/questions';
 
 
 function App () {
-  const [categories, setCategories] = useState([])
-  const [selectedCategoryId, setSelectedCategoryID] = useState(null)
+  const [category, setCategory] = useState([])
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null)
   
-  const handleSelect = () => {
-    setSelectedCategoryID(topic)
-    console.log(topic)
-  }
   useEffect(() => {
-    axios.get(catUrl)
-    .then(res => setCategories(res.data.trivia_categories))
-    },[])
-    // empty dependency array [] stops the infinite loop
-
-  // useEffect(() => {
-  //   axios.get
-  // }
+    requestCategories()
+    .then(res => setCategory(res.data.trivia_categories))};
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Trial by Trivia</h1>
+    <div className="container">
+      <header className="hero is-primary">
+        <h1 className="hero-body title has-text-centered">Trial by Trivia</h1>
       </header>
       <div className="cat-container"></div>
         {categories.map((topic) => ( 
