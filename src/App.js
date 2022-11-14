@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getCategories } from "./components/requests";
 import { Categories } from "./components/categories";
 import { Questions } from "./components/questions";
